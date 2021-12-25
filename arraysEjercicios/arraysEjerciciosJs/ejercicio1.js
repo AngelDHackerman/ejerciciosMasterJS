@@ -13,12 +13,14 @@
 let numeros = [];
 
 
+document.write(`<h1>Estos son los numeros ingresados:`);
 for (let index = 0; numeros.length < 5 ; index++) { 
   let valores = parseInt(prompt(`Introduce tu numero`));
   numeros.push(valores);
+  document.write(`<ul><li>${valores} </li></ul>`);
 };
 
-console.log(numeros);
+console.log(`Estos son los numeros del array:` , numeros);
 
 
 
