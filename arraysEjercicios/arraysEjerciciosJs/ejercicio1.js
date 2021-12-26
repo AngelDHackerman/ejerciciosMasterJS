@@ -12,13 +12,12 @@
 
       //Paso N.1 , 2
 
-let numeros = [];
+let numeros = new Array(6); // el array solo tendra 6 elementos
 
 document.write(`<h1>Estos son los numeros ingresados:</h1>`);
-for (let index = 0; numeros.length < 6 ; index++) { 
-  let valores = parseInt(prompt(`Introduce tu numero`));
-  numeros.push(valores);
-  document.write(`<li>${valores}</li>`);
+for (let index = 0; index <= 5 ; index++) { 
+  numeros[index] = parseInt(prompt(`Introduce un numero`, 0));
+  document.write(`<li>${numeros[index]}</li>`);
 };
 
 console.group(`Numeros en el orde original`);
