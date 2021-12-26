@@ -10,13 +10,21 @@
   6) hacer una busqueda de un valor introducido por el usuario, y que nos diga si esta en el array y su indice
 */
 
+const mostrarArray = (elementos) => { 
+  elementos.forEach(index => document.write(`<li> ${index}</li>` ));
+};
+
+const encontrarIndexArray = (array, numero) => {
+  return array.indexOf(numero);
+}
+
       //Paso N.1 , 2
 
-let numeros = new Array(6); // el array solo tendra 6 elementos
+let numeros = [];
 
 document.write(`<h1>Estos son los numeros ingresados:</h1>`);
 for (let index = 0; index <= 5 ; index++) { 
-  numeros[index] = parseInt(prompt(`Introduce un numero`, 0));
+  numeros.push(parseInt(prompt(`Introduce un numero`)));
   document.write(`<li>${numeros[index]}</li>`);
 };
 
@@ -31,8 +39,8 @@ console.group(`Numeros ordenados`);
   console.log(`Array pero ordenado`, numerosOrdenados);
 console.groupEnd();
 
-document.write(`<h3> Listado de numeros ORDENADOS`);
-numerosOrdenados.forEach(index => document.write(`<li> ${index}</li>` )); //con forEach hacemos que nos quede una lista vertical
+document.write(`<h3> Listado de numeros ORDENADOS </h3>` );
+mostrarArray(numerosOrdenados);
 
       // Aqui los invertimos y los mostramos Paso N.4
 
@@ -42,7 +50,7 @@ console.group(`Numeros invertidos`);
 console.groupEnd();
 
 document.write( `<h3>Numeros ordenados pero INVERTIDOS</h3>` );
-numerosInvertidos.forEach(index => document.write(`<li> ${index}</li>` )); //con forEach hacemos que nos quede una lista vertical
+mostrarArray(numerosInvertidos);
 
       //Aqui mostramos cuantos elementos tiene el array Paso N.5
 
@@ -62,9 +70,9 @@ const buscar = () => {
 
   
   if (found) {
-    let indexOriginal = numeros.indexOf(found);
-    let indexOrdered = numerosOrdenados.indexOf(found);
-    let indexInverted = numerosInvertidos.indexOf(found);
+    let indexOriginal = encontrarIndexArray(numeros, found);
+    let indexOrdered = encontrarIndexArray(numerosOrdenados, found);
+    let indexInverted = encontrarIndexArray(numerosInvertidos, found);
 
     console.group(`Numero encontrado en el array (Recuerda comenzamos desde el 0)`);
       console.log( `Este es el numero buscado y encontrado: ${found}`);
