@@ -15,9 +15,12 @@ formulario.addEventListener('submit', () => {
 
   if (nombres.trim() == null || nombres.trim().length == 0) {
     alert(`El nombre no es valido`);
+    document.querySelector('#errorNombre').innerHTML = 'El nombre no es valido';
 
-    return false;
-  };
+    return false; //Este return false IMPIDE que se muetre el resto del codigo y que no se muestre el cuadrito en la pantalla
+  } else { 
+    document.querySelector('#errorNombre').style.display = 'none';
+  }
 
   if (apellidos.trim() == null || apellidos.trim().length == 0) {
     alert(`Los apellidos no son validos`);
