@@ -6,6 +6,18 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Ejercicio 3 Eventos Dom y mas</title>
   <script src="./eventosDomJS/eventosDomTimers.js"></script>
+  <style>
+    .box { 
+      width: 200px;
+      height: 250px;
+      float: left;
+      margin: 20px;
+    }
+    .dashed { 
+      border: 3px dashed black;
+      padding: 5px;
+    }
+  </style>
 </head>
 <body>
 <!-- 
@@ -19,23 +31,39 @@
 
   <h1>Ejercicio DOM, Eventos y Funciones - Curso master de javaScript</h1>
 
-  <p>
-    <label for="nombres">Nombres</label> <br>
-    <input type="text" name="nombres">
-  </p>
-  <p>
-    <label for="apellidos">Apellidos</label> <br>
-    <input type="text" name="apellidos">
-  </p>
-  <p>
-    <label for="edad">Edad</label> <br>
-    <input type="text" name="edad">
-  </p>
+  <div class="box">
+    <form action="#" method="POST" id="formulario" onsubmit="return false">
+      <p>
+        <label for="nombres">Nombres</label> <br>
+        <input type="text" name="nombres" id="nombres">
+      </p>
+      <p>
+        <label for="apellidos">Apellidos</label> <br>
+        <input type="text" name="apellidos" id="apellidos">
+      </p>
+      <p>
+        <label for="edad">Edad</label> <br>
+        <input type="number" name="edad" id="edad">
+      </p>
+      <p>
+        <input type="submit" value="Enviar" id="enviar" >
+      </p>
+    </form>
+  </div>
 
-  <p>
-    <button type="submit" id="enviar">Enviar</button>
-  </p>
+  <div class="box dashed">
+    <h3>Informacion del usuario</h3>
+    <hr>
 
-
+    <p id="p_nombres">
+      Nombre: <span></span>
+    </p>
+    <p id="p_apellidos">
+      Apellidos: <span></span>
+    </p>
+    <p id="p_edad">
+      Edad: <span></span>
+    </p>
+  </div>
 </body>
 </html>
