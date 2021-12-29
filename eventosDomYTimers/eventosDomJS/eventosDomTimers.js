@@ -9,9 +9,27 @@ formulario.addEventListener('submit', () => {
   console.log(`Evento submit capturado`);
   let nombres = document.querySelector('#nombres').value; // .value saca lo que contiene ese campo
   let apellidos = document.querySelector('#apellidos').value;
-  let edad = document.querySelector('#edad').value;
+  let edad = parseInt(document.querySelector('#edad').value);
   let submit = document.querySelector('#enviar').value;
-  console.log(nombres, apellidos, submit);
+  console.log(nombres, apellidos, edad, submit);
+
+  if (nombres.trim() == null || nombres.trim().length == 0) {
+    alert(`El nombre no es valido`);
+
+    return false;
+  };
+
+  if (apellidos.trim() == null || apellidos.trim().length == 0) {
+    alert(`Los apellidos no son validos`);
+
+    return false;
+  }
+
+  if(edad == null || edad <= 0 || isNaN(edad)) { 
+    alert(`La edad no es valida`);
+
+    return false;
+  }
   
   boxDashed.style.display = 'block'; //AQUI MOSTRAMOS LA CAJA EN EL HTML
 
